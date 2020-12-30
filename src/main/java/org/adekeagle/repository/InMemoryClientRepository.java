@@ -21,7 +21,7 @@ public class InMemoryClientRepository implements ClientRepository {
 
     @Override
     public Client findByEmail(String email) {
-        return clients.stream().filter(client -> Objects.equals(client.getEmail(), email)).findFirst();
+        return clients.stream().filter(client -> Objects.equals(client.getEmail(), email)).findFirst().orElseThrow();
 
     }
 }
